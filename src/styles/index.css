@@ -1,0 +1,13 @@
+@import './fonts.css';
+@import './tailwind.css';
+@import './theme.css';
+
+/* Apply dark mode globally */
+html {
+  color-scheme: dark;
+}
+
+html, body {
+  background: oklch(0.145 0 0);
+  color: oklch(0.985 0 0);
+}
