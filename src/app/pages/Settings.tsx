@@ -125,6 +125,11 @@ export function Settings() {
   const [sessions, setSessions] = useState(settings.customSessions);
   const [newSession, setNewSession] = useState('');
 
+  React.useEffect(() => {
+    setItems(checklistItems);
+    setSessions(settings.customSessions);
+  }, [checklistItems, settings.customSessions]);
+
   const handleAddItem = () => {
     const newItem: ChecklistItem = {
       id: Date.now().toString(),

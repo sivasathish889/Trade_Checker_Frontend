@@ -51,10 +51,10 @@ export function AppProvider({ children }: { children: ReactNode }) {
         return res.json();
       })
       .then(data => {
-        if (data.checklistItems?.length) setChecklistItemsState(data.checklistItems);
-        if (data.trades) setTrades(data.trades);
-        if (data.templates) setTemplates(data.templates);
-        if (data.settings) setSettings(data.settings);
+        setChecklistItemsState(data.checklistItems || []);
+        setTrades(data.trades || []);
+        setTemplates(data.templates || []);
+        setSettings(data.settings || DEFAULT_SETTINGS);
         setIsLoaded(true);
       })
       .catch(err => {
