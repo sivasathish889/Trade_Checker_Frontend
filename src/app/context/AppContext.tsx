@@ -86,7 +86,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const deleteTrade = (id: string) => {
     setTrades(prev => prev.filter(t => t.id !== id));
     if (!token) return;
-    fetch(`${API_URL}/trades/${id}`, { 
+    fetch(`${API_URL}/trades/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     }).catch(console.error);
@@ -105,7 +105,7 @@ export function AppProvider({ children }: { children: ReactNode }) {
   const deleteTemplate = (id: string) => {
     setTemplates(prev => prev.filter(t => t.id !== id));
     if (!token) return;
-    fetch(`${API_URL}/templates/${id}`, { 
+    fetch(`${API_URL}/templates/${id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${token}` }
     }).catch(console.error);

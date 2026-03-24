@@ -60,7 +60,7 @@ export function TradeHistory() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto p-8">
+    <div className="max-w-7xl mx-auto p-4 md:p-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-white mb-2">Trade History</h1>
         <p className="text-gray-400">Review your past trades and performance</p>
