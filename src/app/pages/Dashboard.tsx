@@ -1,12 +1,11 @@
-import React from 'react';
 import { useApp } from '../context/AppContext';
 import { Link } from 'react-router';
 import { Card } from '../components/ui/card';
 import { Button } from '../components/ui/button';
-import { 
-  TrendingUp, 
-  TrendingDown, 
-  Target, 
+import {
+  TrendingUp,
+  TrendingDown,
+  Target,
   Calendar,
   BarChart3,
   PlusCircle,
@@ -21,7 +20,7 @@ export function Dashboard() {
   const avgScore = totalTrades > 0
     ? trades.reduce((sum, t) => sum + t.score, 0) / totalTrades
     : 0;
-  
+
   const highQualityTrades = trades.filter(t => t.score >= 80).length;
   const winRate = totalTrades > 0 ? (highQualityTrades / totalTrades) * 100 : 0;
 
@@ -141,7 +140,7 @@ export function Dashboard() {
         {/* Quick Actions */}
         <Card className="bg-gray-800 border-gray-700 p-6">
           <h2 className="text-xl font-semibold text-white mb-6">Quick Actions</h2>
-          
+
           <div className="space-y-4">
             <Link to="/new-trade">
               <button className="w-full p-4 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-lg text-left hover:from-emerald-600 hover:to-teal-700 transition-all group">
@@ -192,7 +191,7 @@ export function Dashboard() {
       {totalTrades > 0 && (
         <Card className="bg-gray-800 border-gray-700 p-6 mt-8">
           <h2 className="text-xl font-semibold text-white mb-6">Performance Insights</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-4 bg-gray-900 rounded-lg">
               <div className="text-sm text-gray-400 mb-2">Best Score</div>
@@ -207,7 +206,7 @@ export function Dashboard() {
                 {trades.reduce((acc, trade) => {
                   acc[trade.pair] = (acc[trade.pair] || 0) + 1;
                   return acc;
-                }, {} as Record<string, number>) && 
+                }, {} as Record<string, number>) &&
                   Object.entries(
                     trades.reduce((acc, trade) => {
                       acc[trade.pair] = (acc[trade.pair] || 0) + 1;
